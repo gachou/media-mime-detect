@@ -18,6 +18,8 @@ try {
   if (e.code === 'MODULE_NOT_FOUND') {
     // npm-version >= 3
     defaultMagic = require.resolve('mmmagic/magic/magic.mgc')
+  } else {
+    throw e
   }
 }
 magic.config.magicFile = magicAdditions + ':' + defaultMagic
