@@ -46,8 +46,13 @@ function getMimeType (file) {
 }
 
 describe('media-mime-detect:', function () {
-  beforeEach(() => qfs.makeTree(tempfile))
-  afterEach(() => qfs.removeTree(tempfile))
+  beforeEach(function () {
+    return qfs.makeTree(tempfile)
+  })
+
+  afterEach(function () {
+    return qfs.removeTree(tempfile)
+  })
 
   it('should detect video/mp4 from streamable video', function () {
     return loadData('1-video-streamable.mp4').then(getMimeType).should.eventually.equal('video/mp4')
