@@ -8,7 +8,7 @@
 > streaming detection of media-files in Node.js
 
 
-This package uses [undefined](https://npmjs.com/package/undefined) to sniff for magic-bytes on a stream without interupting the
+This package uses [stream-mmmagic](https://npmjs.com/package/stream-mmmagic) to sniff for magic-bytes on a stream without interupting the
 stream. In fact, this package uses `stream-mmmagic` directly with a single change:
 
 It ships with a custom `magic`-file that contains patterns for mime-types that are not detected

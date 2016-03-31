@@ -1,6 +1,6 @@
 {
   "name": "media-mime-detect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "streaming detection of media-files in Node.js",
   "repository": {
     "type": "git",
