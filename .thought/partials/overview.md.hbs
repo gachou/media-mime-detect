@@ -1,0 +1,12 @@
+
+This package uses {{npm stream-mmmagic}} to sniff for magic-bytes on a stream without interupting the
+stream. In fact, this package uses `stream-mmmagic` directly with a single change:
+
+It ships with a custom `magic`-file that contains patterns for mime-types that are not detected
+by the current default `magic`-file.
+
+## Additional file-types
+
+* `video/m2pt`: MPEG2-Transport-Stream (used by cameras that record AVHCD-videos)
+
+

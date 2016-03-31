@@ -1,3 +1,4 @@
+/examples/prinz-georg-garten2.jpg
 # .gitignore <https://github.com/tunnckoCore/dotfiles>
 #
 # Copyright (c) 2015 Charlike Mike Reagent, contributors.
@@ -11,10 +12,7 @@ node_modules
 bower_components
 components
 vendor
-build
 dest
-dist
-src
 lib-cov
 coverage
 nbproject
@@ -31,7 +29,6 @@ tmp
 *.iso
 *.jar
 *.rar
-*.tar
 *.zip
 
 # OS, Logs and databases #

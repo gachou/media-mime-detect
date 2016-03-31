@@ -7,11 +7,19 @@
 
 'use strict'
 
-module.exports = mediaMimeDetect
-/**
- * Describe your module here
- * @public
- */
-function mediaMimeDetect () {
-  // body
+var magic = require('stream-mmmagic')
+var path = require('path')
+
+var magicAdditions = path.join(__dirname, 'misc', 'magic')
+var defaultMagic = null
+try {
+  defaultMagic = require.resolve('stream-mmmagic/node_modules/mmmagic/magic/magic.mgc')
+} catch (e) {
+  if (e.code === 'MODULE_NOT_FOUND') {
+    // npm-version >= 3
+    defaultMagic = require.resolve('mmmagic/magic/magic.mgc')
+  }
 }
+magic.config.magicFile = magicAdditions + ':' + defaultMagic
+
+module.exports = magic
