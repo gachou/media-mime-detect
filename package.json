@@ -1,0 +1,53 @@
+{
+  "name": "media-mime-detect",
+  "version": "0.0.0",
+  "description": "streaming detection of media-files in Node.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:warau-js/media-mime-detect.git"
+  },
+  "homepage": "https://github.com/warau-js/media-mime-detect",
+  "author": {
+    "name": "Nils Knappmeier",
+    "email": "npm@knappi.org",
+    "url": "https://github.com/nknapp"
+  },
+  "bugs": {
+    "url": "https://github.com/warau-js/media-mime-detect/issues"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "preformat": "standard --version || npm -g install standard",
+    "format": "standard --format",
+    "pretest": "standard --version || npm -g install standard",
+    "test": "mocha --recursive && standard",
+    "thought": "thought run -a",
+    "prethoughtcheck": "thought --version || npm -g install thought",
+    "thoughtcheck": "thought check-engines",
+    "version": "thoughtful changelog -o -a && npm run thought",
+    "preversion": "npm run thoughtcheck"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ghooks": "^1.0.3",
+    "mocha": "^2.3.3",
+    "thoughtful-release": "^0.3.0"
+  },
+  "standard": {
+    "ignore": [
+      "test/fixtures/**"
+    ]
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "bin"
+  ],
+  "config": {
+    "ghooks": {
+      "pre-commit": "standard"
+    }
+  },
+  "keywords": [ "stream","media","video","mmmagic" ]
+}
