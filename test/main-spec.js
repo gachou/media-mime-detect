@@ -36,7 +36,7 @@ function getMimeType (file) {
     }
     var targetFile = path.resolve(tempfile, path.basename(file))
     output.pipe(fs.createWriteStream(targetFile))
-      .on('finish', () => {
+      .on('finish', function () {
         // ensure that the stream does not modify the contents
         fs.readFileSync(targetFile).should.deep.equal(fs.readFileSync(file))
         defer.resolve(mime.type)
@@ -57,12 +57,12 @@ describe('media-mime-detect:', function () {
     return loadData('2-video-unstreamable.mp4').then(getMimeType).should.eventually.equal('video/mp4')
   })
 
-  it('should detect video/mp2t', () => {
+  it('should detect video/mp2t', function () {
     return loadData('panasonic-lumix-dmc-zx3.tar', 'PRIVATE/AVCHD/BDMV/STREAM/00000.MTS')
       .then(getMimeType).should.eventually.equal('video/mp2t')
   })
 
-  it('should detect animated gifs', () => {
+  it('should detect animated gifs', function () {
     return getMimeType(require.resolve('./fixtures/animated-gif.gif'))
       .should.eventually.equal('image/gif')
   })
