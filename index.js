@@ -15,10 +15,13 @@ var defaultMagic = null
 try {
   defaultMagic = require.resolve('stream-mmmagic/node_modules/mmmagic/magic/magic.mgc')
 } catch (e) {
+  /* istanbul ignore else  */
   if (e.code === 'MODULE_NOT_FOUND') {
     // npm-version >= 3
     defaultMagic = require.resolve('mmmagic/magic/magic.mgc')
   } else {
+    // else-block ignored in test coverage report. It exist to be save, in case
+    // the `require.resolve` throws an error other tham MODULE_NOT_FOUND.
     throw e
   }
 }
