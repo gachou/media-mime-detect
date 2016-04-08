@@ -4,16 +4,16 @@
   "description": "streaming detection of media-files in Node.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:warau-js/media-mime-detect.git"
+    "url": "git@github.com:gachou/media-mime-detect.git"
   },
-  "homepage": "https://github.com/warau-js/media-mime-detect",
+  "homepage": "https://github.com/gachou/media-mime-detect",
   "author": {
     "name": "Nils Knappmeier",
     "email": "npm@knappi.org",
     "url": "https://github.com/nknapp"
   },
   "bugs": {
-    "url": "https://github.com/warau-js/media-mime-detect/issues"
+    "url": "https://github.com/gachou/media-mime-detect/issues"
   },
   "main": "index.js",
   "license": "MIT",
